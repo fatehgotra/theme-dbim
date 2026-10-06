@@ -29,6 +29,12 @@
 }
 
 /* Base Styles */
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
+}
+
 body {
     font-family: var(--font-main);
     color: var(--text-main);
@@ -90,7 +96,7 @@ a:hover, a:focus {
 .top-bar {
     background-color: #1a1a1a;
     color: #e0e0e0;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     padding: 4px 0;
 }
 
@@ -103,23 +109,39 @@ a:hover, a:focus {
     color: var(--gov-white);
 }
 
+.top-bar-divider {
+    opacity: 0.5;
+}
+
 .top-bar .top-link {
-    margin-left: 15px;
-    padding-left: 15px;
+    margin-left: 12px;
+    padding-left: 12px;
     border-left: 1px solid #444;
 }
 
 .top-bar .btn-sm {
-    padding: 0.1rem 0.4rem;
-    font-size: 0.8rem;
+    padding: 0.12rem 0.45rem;
+    font-size: 0.78rem;
     border: 1px solid #444;
     color: #e0e0e0;
+    line-height: 1.2;
+}
+
+.top-bar .language-switch .form-select-sm {
+    font-size: 0.75rem;
+    padding-top: 0.12rem;
+    padding-bottom: 0.12rem;
+    background-color: #2b2b2b;
+    color: #fff;
+    border-color: #444;
 }
 
 /* Header */
 .main-header {
     background-color: var(--gov-white);
     border-bottom: 3px solid var(--gov-orange);
+    position: relative;
+    z-index: 100;
 }
 
 [data-theme="high-contrast"] .main-header {
@@ -127,20 +149,45 @@ a:hover, a:focus {
     border-bottom-color: var(--gov-orange);
 }
 
+.logo-area {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+}
+
+.emblem {
+    height: 75px;
+    width: auto;
+    max-width: 65px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.ministry-title {
+    min-width: 0;
+    flex: 1 1 auto;
+}
+
 .ministry-title h1 {
-    font-size: 1.2rem;
-    font-weight: 700;
     margin-bottom: 2px;
+    line-height: 1.25;
 }
 
 .ministry-name-hi {
-    font-size: 1.4rem !important;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.ministry-name-en {
+    font-size: 1.25rem;
+    font-weight: 700;
 }
 
 .gov-india {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
 }
 
 /* Navigation */
@@ -454,52 +501,138 @@ a:hover, a:focus {
     }
 }
 
-/* --- Tablets Portrait (576px – 767px) --- */
+/* --- Tablets Portrait & Mobiles (< 768px) --- */
 @media (max-width: 767px) {
-    /* Top bar stacks */
+    /* Top bar: Two balanced rows, centered, zero overflow */
+    .top-bar {
+        padding: 4px 0 !important;
+        font-size: 0.72rem !important;
+    }
     .top-bar .container {
-        flex-direction: column;
-        gap: 4px;
-        padding: 6px 0;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 3px !important;
+        padding: 2px 8px !important;
     }
     .top-bar-left {
-        text-align: center;
-        width: 100%;
+        width: 100% !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 6px !important;
+        font-size: 0.72rem !important;
+    }
+    .top-bar-left a {
+        font-size: 0.72rem !important;
     }
     .top-bar-right {
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 5px;
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        flex-wrap: wrap !important;
+        gap: 6px !important;
+        margin-top: 2px !important;
     }
     .top-bar .top-link {
         display: none !important;
     }
+    .text-resize {
+        display: flex !important;
+        gap: 2px !important;
+        margin: 0 !important;
+    }
+    .text-resize .btn {
+        padding: 0.08rem 0.35rem !important;
+        font-size: 0.68rem !important;
+        line-height: 1.1 !important;
+    }
+    .theme-toggle {
+        margin: 0 !important;
+    }
+    .theme-toggle .btn {
+        padding: 0.08rem 0.35rem !important;
+        font-size: 0.68rem !important;
+    }
+    .language-switch {
+        margin: 0 !important;
+    }
+    .language-switch .form-select-sm {
+        font-size: 0.7rem !important;
+        padding: 0.08rem 1.4rem 0.08rem 0.4rem !important;
+        height: auto !important;
+    }
 
-    /* Header */
+    /* Main Header: Emblem + Text side-by-side, perfectly proportioned */
     .header-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        text-align: left !important;
+        padding: 8px 0 !important;
+        gap: 0 !important;
     }
     .logo-area {
-        flex-direction: column;
-        text-align: center;
-    }
-    .ministry-title {
-        margin-left: 0 !important;
-        margin-top: 8px;
-    }
-    .ministry-title h1 {
-        font-size: 0.95rem;
-    }
-    .ministry-name-hi {
-        font-size: 1rem !important;
-    }
-    .gov-india {
-        font-size: 0.8rem;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        text-align: left !important;
+        width: 100% !important;
+        max-width: 100% !important;
     }
     .emblem {
-        height: 55px !important;
+        height: 52px !important;
+        width: auto !important;
+        max-width: 44px !important;
+        flex-shrink: 0 !important;
+    }
+    .ministry-title {
+        margin-left: 10px !important;
+        margin-top: 0 !important;
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
+        text-align: left !important;
+    }
+    .ministry-title h1 {
+        margin-bottom: 1px !important;
+    }
+    .ministry-name-hi {
+        font-size: 0.78rem !important;
+        line-height: 1.25 !important;
+        font-weight: 700 !important;
+        display: block !important;
+        word-break: break-word !important;
+    }
+    .ministry-name-en {
+        font-size: 0.85rem !important;
+        line-height: 1.25 !important;
+        font-weight: 700 !important;
+        display: block !important;
+        word-break: break-word !important;
+    }
+    .gov-india {
+        font-size: 0.68rem !important;
+        line-height: 1.2 !important;
+        display: block !important;
+    }
+
+    /* Navbar on mobile */
+    .navbar {
+        padding: 4px 0 !important;
+    }
+    .navbar-toggler {
+        padding: 4px 8px !important;
+        font-size: 0.85rem !important;
+        display: inline-flex !important;
+        align-items: center !important;
+    }
+    .navbar-toggler-icon {
+        width: 1.2em !important;
+        height: 1.2em !important;
     }
 
     /* Hero */
@@ -515,18 +648,23 @@ a:hover, a:focus {
 
     /* Announcements */
     .announcements .container {
-        flex-direction: column;
-        gap: 8px;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 6px !important;
     }
     .announcement-label {
-        align-self: flex-start;
+        align-self: flex-start !important;
+        font-size: 0.75rem !important;
+        padding: 3px 8px !important;
     }
     .ticker-wrapper {
-        width: 100%;
+        width: 100% !important;
+        height: 24px !important;
     }
     .ticker-controls {
+        align-self: flex-end !important;
         margin-left: 0 !important;
-        margin-top: 4px;
+        margin-top: 2px !important;
     }
 
     /* Sections */
@@ -603,45 +741,57 @@ a:hover, a:focus {
         font-size: 14px;
     }
 
-    /* Top bar */
+    /* Top bar: Ultra compact */
     .top-bar {
-        font-size: 0.72rem;
-        padding: 3px 0;
+        font-size: 0.68rem !important;
+        padding: 3px 0 !important;
+    }
+    .top-bar-left {
+        gap: 4px !important;
+    }
+    .top-bar-left a {
+        font-size: 0.68rem !important;
     }
     .top-bar-right {
-        gap: 3px;
+        gap: 4px !important;
     }
     .text-resize .btn {
-        padding: 0.05rem 0.3rem !important;
-        font-size: 0.7rem !important;
+        padding: 0.05rem 0.28rem !important;
+        font-size: 0.65rem !important;
     }
     .language-switch .form-select-sm {
-        font-size: 0.72rem;
-        padding: 0.15rem 1.5rem 0.15rem 0.4rem;
+        font-size: 0.68rem !important;
+        padding: 0.05rem 1.2rem 0.05rem 0.35rem !important;
     }
 
-    /* Header */
+    /* Header: perfectly scaled */
     .header-content {
-        padding: 10px 0 !important;
+        padding: 6px 0 !important;
     }
     .emblem {
-        height: 45px !important;
+        height: 48px !important;
+        max-width: 40px !important;
     }
-    .ministry-title h1 {
-        font-size: 0.82rem;
+    .ministry-title {
+        margin-left: 8px !important;
     }
     .ministry-name-hi {
-        font-size: 0.85rem !important;
+        font-size: 0.74rem !important;
+        line-height: 1.2 !important;
+    }
+    .ministry-name-en {
+        font-size: 0.8rem !important;
+        line-height: 1.2 !important;
     }
     .gov-india {
-        font-size: 0.7rem;
-        letter-spacing: 0.5px;
+        font-size: 0.64rem !important;
+        letter-spacing: 0.2px !important;
     }
 
     /* Nav — full width items, larger touch targets */
     .navbar-nav .nav-link {
-        padding: 0.85rem 1rem;
-        font-size: 0.95rem;
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
     }
     .dropdown-item {
         padding: 0.6rem 1rem;
@@ -665,11 +815,11 @@ a:hover, a:focus {
 
     /* Announcement ticker */
     .announcement-label {
-        font-size: 0.72rem;
-        padding: 3px 8px !important;
+        font-size: 0.7rem !important;
+        padding: 2px 7px !important;
     }
     .ticker-content li {
-        font-size: 0.8rem;
+        font-size: 0.78rem;
     }
 
     /* Section titles */
@@ -806,13 +956,22 @@ a:hover, a:focus {
         font-size: 13px;
     }
     .emblem {
-        height: 38px !important;
+        height: 40px !important;
+        max-width: 34px !important;
     }
-    .ministry-title h1 {
-        font-size: 0.75rem;
+    .ministry-title {
+        margin-left: 6px !important;
     }
     .ministry-name-hi {
-        font-size: 0.78rem !important;
+        font-size: 0.68rem !important;
+        line-height: 1.15 !important;
+    }
+    .ministry-name-en {
+        font-size: 0.74rem !important;
+        line-height: 1.15 !important;
+    }
+    .gov-india {
+        font-size: 0.58rem !important;
     }
     .carousel-placeholder {
         height: 170px !important;

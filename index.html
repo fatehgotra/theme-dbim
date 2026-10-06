@@ -20,38 +20,40 @@
 
     <!-- Top Bar -->
     <div class="top-bar">
-        <div class="container d-flex justify-content-between align-items-center">
-            <div class="top-bar-left d-flex align-items-center gap-3">
-                <a href="https://www.india.gov.in/" target="_blank" rel="noopener noreferrer" title="Government of India, External Link that opens in a new window">
-                    <span>Government of India</span>
-                </a>
-                <span class="text-muted">|</span>
-                <a href="https://jk.gov.in/" target="_blank" rel="noopener noreferrer" title="Government of Jammu & Kashmir, External Link that opens in a new window">
-                    <span>Government of Jammu & Kashmir</span>
-                </a>
-            </div>
-            <div class="top-bar-right d-flex align-items-center">
-                <a href="#main-content" class="top-link d-none d-md-inline" title="Skip to Main Content">Skip to Main Content</a>
-                <a href="#" class="top-link d-none d-md-inline" title="Screen Reader Access">Screen Reader Access</a>
-                <div class="text-resize mx-2">
-                    <button type="button" class="btn btn-sm" id="btn-text-decrease" title="Decrease Text Size" aria-label="Decrease Text Size">A-</button>
-                    <button type="button" class="btn btn-sm" id="btn-text-normal" title="Normal Text Size" aria-label="Normal Text Size">A</button>
-                    <button type="button" class="btn btn-sm" id="btn-text-increase" title="Increase Text Size" aria-label="Increase Text Size">A+</button>
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-1 gap-md-0">
+                <div class="top-bar-left d-flex flex-wrap align-items-center justify-content-center justify-content-md-start gap-2">
+                    <a href="https://www.india.gov.in/" target="_blank" rel="noopener noreferrer" title="Government of India">
+                        <span>Government of India</span>
+                    </a>
+                    <span class="text-muted top-bar-divider">|</span>
+                    <a href="https://jk.gov.in/" target="_blank" rel="noopener noreferrer" title="Government of Jammu & Kashmir">
+                        <span>Govt. of Jammu & Kashmir</span>
+                    </a>
                 </div>
-                <div class="theme-toggle mx-2">
-                    <button type="button" class="btn btn-sm btn-dark" id="btn-high-contrast" title="High Contrast View" aria-label="High Contrast">
-                        <i class="fas fa-adjust"></i>
-                    </button>
-                    <button type="button" class="btn btn-sm btn-light d-none" id="btn-normal-contrast" title="Normal View" aria-label="Normal Contrast">
-                        <i class="fas fa-sun"></i>
-                    </button>
-                </div>
-                <div class="language-switch ms-2">
-                    <select class="form-select form-select-sm" aria-label="Language Selection">
-                        <option value="en" selected>English</option>
-                        <option value="hi">हिन्दी</option>
-                        <option value="ur">اردو</option>
-                    </select>
+                <div class="top-bar-right d-flex align-items-center justify-content-center flex-wrap gap-1 gap-sm-2">
+                    <a href="#main-content" class="top-link d-none d-lg-inline" title="Skip to Main Content">Skip to Main Content</a>
+                    <a href="#" class="top-link d-none d-lg-inline" title="Screen Reader Access">Screen Reader Access</a>
+                    <div class="text-resize d-flex gap-1">
+                        <button type="button" class="btn btn-sm" id="btn-text-decrease" title="Decrease Text Size" aria-label="Decrease Text Size">A-</button>
+                        <button type="button" class="btn btn-sm" id="btn-text-normal" title="Normal Text Size" aria-label="Normal Text Size">A</button>
+                        <button type="button" class="btn btn-sm" id="btn-text-increase" title="Increase Text Size" aria-label="Increase Text Size">A+</button>
+                    </div>
+                    <div class="theme-toggle">
+                        <button type="button" class="btn btn-sm btn-dark" id="btn-high-contrast" title="High Contrast View" aria-label="High Contrast">
+                            <i class="fas fa-adjust"></i>
+                        </button>
+                        <button type="button" class="btn btn-sm btn-light d-none" id="btn-normal-contrast" title="Normal View" aria-label="Normal Contrast">
+                            <i class="fas fa-sun"></i>
+                        </button>
+                    </div>
+                    <div class="language-switch">
+                        <select class="form-select form-select-sm" aria-label="Language Selection">
+                            <option value="en" selected>English</option>
+                            <option value="hi">हिन्दी</option>
+                            <option value="ur">اردو</option>
+                        </select>
+                    </div>
                 </div>
             </div>
         </div>
@@ -60,11 +62,11 @@
     <!-- Header -->
     <header class="main-header">
         <div class="container">
-            <div class="header-content d-flex justify-content-between align-items-center py-3">
+            <div class="header-content d-flex justify-content-between align-items-center py-2 py-md-3">
                 <div class="logo-area d-flex align-items-center">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" alt="State Emblem of India" class="emblem" height="80">
-                    <div class="ministry-title ms-3">
-                        <h1 class="ministry-name-hi text-orange mb-0" style="font-size:1.1rem;">राष्ट्रीय सूचना विज्ञान केन्द्र सेवा निगम (एनआईसीएसआई)</h1>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" alt="State Emblem of India" class="emblem" height="75">
+                    <div class="ministry-title ms-2 ms-sm-3">
+                        <h1 class="ministry-name-hi text-orange mb-0">राष्ट्रीय सूचना विज्ञान केन्द्र सेवा निगम (एनआईसीएसआई)</h1>
                         <h1 class="ministry-name-en text-primary-dark mb-0">National Informatics Centre Services Inc. (NICSI)</h1>
                         <p class="gov-india text-muted mb-0">NIC Jammu &mdash; Government of Jammu & Kashmir</p>
                     </div>
@@ -81,8 +83,9 @@
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary-dark">
             <div class="container">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
+                    <span class="ms-2 small text-white fw-bold">MENU / मेनू</span>
                 </button>
                 <div class="collapse navbar-collapse" id="mainNav">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 justify-content-between">
