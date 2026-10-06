@@ -1,0 +1,933 @@
+/* CSS variables for theme customization */
+:root {
+    --gov-blue: #003366;
+    --gov-blue-light: #004d99;
+    --gov-orange: #FF9933;
+    --gov-green: #138808;
+    --gov-white: #FFFFFF;
+    --text-main: #333333;
+    --text-muted: #666666;
+    --bg-light: #f4f6f9;
+    --bg-gray: #e9ecef;
+    --border-color: #dee2e6;
+    --font-main: 'Noto Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --transition-speed: 0.3s;
+}
+
+/* High Contrast Theme Variables */
+[data-theme="high-contrast"] {
+    --gov-blue: #000000;
+    --gov-blue-light: #333333;
+    --gov-orange: #FFFF00;
+    --gov-green: #00FF00;
+    --gov-white: #000000;
+    --text-main: #FFFFFF;
+    --text-muted: #CCCCCC;
+    --bg-light: #000000;
+    --bg-gray: #111111;
+    --border-color: #FFFF00;
+}
+
+/* Base Styles */
+body {
+    font-family: var(--font-main);
+    color: var(--text-main);
+    background-color: var(--gov-white);
+    line-height: 1.6;
+    font-size: 16px;
+    transition: font-size 0.2s ease;
+}
+
+[data-theme="high-contrast"] body {
+    background-color: #000;
+    color: #fff;
+}
+
+a {
+    color: var(--gov-blue);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+
+a:hover, a:focus {
+    color: var(--gov-orange);
+    text-decoration: underline;
+}
+
+[data-theme="high-contrast"] a {
+    color: var(--gov-orange);
+}
+
+/* Focus states for accessibility */
+*:focus {
+    outline: 2px dashed var(--gov-orange);
+    outline-offset: 2px;
+}
+
+/* Utility Classes */
+.text-primary-dark { color: var(--gov-blue) !important; }
+.bg-primary-dark { background-color: var(--gov-blue) !important; }
+.text-orange { color: var(--gov-orange) !important; }
+.bg-orange { background-color: var(--gov-orange) !important; }
+
+/* Skip to Main Content */
+.skip-to-main {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    background: var(--gov-orange);
+    color: white;
+    padding: 8px 15px;
+    z-index: 9999;
+    transition: top 0.2s;
+}
+
+.skip-to-main:focus {
+    top: 0;
+}
+
+/* Top Bar */
+.top-bar {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    font-size: 0.85rem;
+    padding: 4px 0;
+}
+
+.top-bar a {
+    color: #e0e0e0;
+    text-decoration: none;
+}
+
+.top-bar a:hover {
+    color: var(--gov-white);
+}
+
+.top-bar .top-link {
+    margin-left: 15px;
+    padding-left: 15px;
+    border-left: 1px solid #444;
+}
+
+.top-bar .btn-sm {
+    padding: 0.1rem 0.4rem;
+    font-size: 0.8rem;
+    border: 1px solid #444;
+    color: #e0e0e0;
+}
+
+/* Header */
+.main-header {
+    background-color: var(--gov-white);
+    border-bottom: 3px solid var(--gov-orange);
+}
+
+[data-theme="high-contrast"] .main-header {
+    background-color: #000;
+    border-bottom-color: var(--gov-orange);
+}
+
+.ministry-title h1 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.ministry-name-hi {
+    font-size: 1.4rem !important;
+}
+
+.gov-india {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Navigation */
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    padding: 0.8rem 1rem;
+    border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:focus,
+.navbar-dark .navbar-nav .nav-link.active {
+    color: var(--gov-orange);
+    background-color: rgba(0,0,0,0.2);
+}
+
+.dropdown-menu {
+    border-radius: 0;
+    border-top: 3px solid var(--gov-orange);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+    background-color: var(--gov-blue);
+    color: var(--gov-white);
+}
+
+.btn-search {
+    background-color: var(--gov-orange);
+    color: white;
+    border-radius: 0;
+}
+
+.btn-search:hover {
+    background-color: #e68a00;
+    color: white;
+}
+
+/* Hero Section */
+.hero-section .carousel-item {
+    transition: transform .6s ease-in-out;
+}
+
+/* Announcements Ticker */
+.ticker-wrapper {
+    position: relative;
+    height: 25px;
+}
+.ticker-content {
+    position: absolute;
+    white-space: nowrap;
+    animation: ticker 30s linear infinite;
+}
+.ticker-wrapper:hover .ticker-content {
+    animation-play-state: paused;
+}
+@keyframes ticker {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Sections */
+.section-title {
+    position: relative;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gov-blue);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+[data-theme="high-contrast"] .section-title {
+    color: var(--gov-orange);
+    border-color: var(--gov-orange);
+}
+.section-title span {
+    position: relative;
+}
+.section-title span::after {
+    content: '';
+    position: absolute;
+    bottom: -10px; /* match padding + border */
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--gov-orange);
+}
+
+/* Cards */
+.initiative-card {
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    border: 1px solid var(--border-color);
+}
+.initiative-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+    border-color: var(--gov-blue);
+}
+
+[data-theme="high-contrast"] .initiative-card {
+    background: #111;
+    border-color: #ff0;
+}
+
+/* Sidebar */
+.widget-title {
+    background-color: var(--gov-blue) !important;
+}
+
+/* Stats */
+.stat-item {
+    padding: 20px;
+}
+
+/* Footer */
+.footer-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    color: var(--gov-orange);
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: #cccccc;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: var(--gov-white);
+    padding-left: 5px;
+}
+.footer-links a::before {
+    content: '\203A';
+    margin-right: 8px;
+    color: var(--gov-orange);
+}
+
+.btn-social {
+    color: white;
+    background: rgba(255,255,255,0.1);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+    transition: background 0.3s;
+}
+.btn-social:hover {
+    background: var(--gov-orange);
+    color: white;
+}
+
+/* Back to Top */
+#btn-back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    z-index: 99;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    background-color: var(--gov-blue);
+    border-color: var(--gov-blue);
+}
+
+#btn-back-to-top:hover {
+    background-color: var(--gov-orange);
+    border-color: var(--gov-orange);
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN — All Device Breakpoints
+   ===================================================== */
+
+/* --- Extra Large Desktops (≥1400px) --- */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+    .ministry-name-en {
+        font-size: 1.5rem !important;
+    }
+    .ministry-name-hi {
+        font-size: 1.6rem !important;
+    }
+    .carousel-placeholder {
+        height: 450px !important;
+    }
+    .carousel-placeholder h2 {
+        font-size: 3rem;
+    }
+    .stat-number {
+        font-size: 2.5rem;
+    }
+}
+
+/* --- Large Desktops (1200px – 1399px) --- */
+@media (min-width: 1200px) and (max-width: 1399px) {
+    .ministry-name-en {
+        font-size: 1.3rem !important;
+    }
+    .carousel-placeholder {
+        height: 400px !important;
+    }
+}
+
+/* --- Laptops / Small Desktops (992px – 1199px) --- */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .ministry-title h1 {
+        font-size: 1.05rem;
+    }
+    .ministry-name-hi {
+        font-size: 1.15rem !important;
+    }
+    .emblem {
+        height: 65px !important;
+    }
+    .navbar-nav .nav-link {
+        padding: 0.7rem 0.6rem;
+        font-size: 0.85rem;
+    }
+    .carousel-placeholder {
+        height: 350px !important;
+    }
+    .initiative-card .card-body {
+        padding: 1rem;
+    }
+    .stat-number {
+        font-size: 1.8rem;
+    }
+}
+
+/* --- Tablets Landscape / Small Laptops (768px – 991px) --- */
+@media (max-width: 991px) {
+    /* Top bar */
+    .top-bar {
+        font-size: 0.78rem;
+    }
+    .top-bar .top-link {
+        margin-left: 8px;
+        padding-left: 8px;
+    }
+
+    /* Header */
+    .ministry-title h1 {
+        font-size: 1rem;
+    }
+    .ministry-name-hi {
+        font-size: 1.1rem !important;
+    }
+    .emblem {
+        height: 60px !important;
+    }
+
+    /* Navigation collapses to hamburger */
+    .navbar-nav .nav-link {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 0.75rem 1rem;
+    }
+    .navbar .d-flex[role="search"] {
+        margin-top: 0.75rem;
+        width: 100%;
+    }
+    .navbar .d-flex[role="search"] .input-group {
+        width: 100%;
+    }
+
+    /* Hero */
+    .carousel-placeholder {
+        height: 300px !important;
+    }
+    .carousel-placeholder h2 {
+        font-size: 1.75rem;
+    }
+    .carousel-placeholder .lead {
+        font-size: 1rem;
+    }
+
+    /* Announcement ticker */
+    .announcement-label {
+        font-size: 0.8rem;
+        padding: 4px 10px !important;
+    }
+
+    /* Stats section */
+    .stat-number {
+        font-size: 1.6rem;
+    }
+    .stat-text {
+        font-size: 0.85rem;
+    }
+
+    /* Footer */
+    .footer-bottom {
+        text-align: center;
+    }
+    .footer-bottom .d-flex {
+        flex-direction: column !important;
+        gap: 1rem;
+    }
+}
+
+/* --- Tablets Portrait (576px – 767px) --- */
+@media (max-width: 767px) {
+    /* Top bar stacks */
+    .top-bar .container {
+        flex-direction: column;
+        gap: 4px;
+        padding: 6px 0;
+    }
+    .top-bar-left {
+        text-align: center;
+        width: 100%;
+    }
+    .top-bar-right {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+    .top-bar .top-link {
+        display: none !important;
+    }
+
+    /* Header */
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    .logo-area {
+        flex-direction: column;
+        text-align: center;
+    }
+    .ministry-title {
+        margin-left: 0 !important;
+        margin-top: 8px;
+    }
+    .ministry-title h1 {
+        font-size: 0.95rem;
+    }
+    .ministry-name-hi {
+        font-size: 1rem !important;
+    }
+    .gov-india {
+        font-size: 0.8rem;
+    }
+    .emblem {
+        height: 55px !important;
+    }
+
+    /* Hero */
+    .carousel-placeholder {
+        height: 250px !important;
+    }
+    .carousel-placeholder h2 {
+        font-size: 1.5rem;
+    }
+    .carousel-placeholder .lead {
+        font-size: 0.9rem;
+    }
+
+    /* Announcements */
+    .announcements .container {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .announcement-label {
+        align-self: flex-start;
+    }
+    .ticker-wrapper {
+        width: 100%;
+    }
+    .ticker-controls {
+        margin-left: 0 !important;
+        margin-top: 4px;
+    }
+
+    /* Sections */
+    .section-title {
+        font-size: 1.25rem;
+    }
+
+    /* Minister / Leadership cards — stack to 1 column */
+    .ministers-section .col-md-4,
+    .ministers-section .col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    /* Initiative cards — 2 per row on tablet */
+    .initiatives-section .col-lg-4 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    /* Projects */
+    .projects-section .col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    /* Quick access buttons */
+    .services-section .d-flex {
+        flex-direction: column;
+    }
+    .services-section .btn {
+        width: 100%;
+    }
+
+    /* Sidebar takes full width below content */
+    .sidebar {
+        margin-top: 2rem;
+    }
+
+    /* Stats — 2 per row */
+    .stats-section .col-md-3 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .stat-item {
+        padding: 15px 10px;
+    }
+    .stat-item i {
+        font-size: 2rem !important;
+    }
+    .stat-number {
+        font-size: 1.4rem;
+    }
+
+    /* Partner portals */
+    .partner-portals .gap-4 {
+        gap: 0.75rem !important;
+    }
+    .portal-logo span {
+        font-size: 0.8rem;
+        padding: 4px 8px !important;
+    }
+
+    /* Footer — 2 columns */
+    .footer-top .col-lg-3 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+/* --- Mobile Phones (≤575px) --- */
+@media (max-width: 575px) {
+    body {
+        font-size: 14px;
+    }
+
+    /* Top bar */
+    .top-bar {
+        font-size: 0.72rem;
+        padding: 3px 0;
+    }
+    .top-bar-right {
+        gap: 3px;
+    }
+    .text-resize .btn {
+        padding: 0.05rem 0.3rem !important;
+        font-size: 0.7rem !important;
+    }
+    .language-switch .form-select-sm {
+        font-size: 0.72rem;
+        padding: 0.15rem 1.5rem 0.15rem 0.4rem;
+    }
+
+    /* Header */
+    .header-content {
+        padding: 10px 0 !important;
+    }
+    .emblem {
+        height: 45px !important;
+    }
+    .ministry-title h1 {
+        font-size: 0.82rem;
+    }
+    .ministry-name-hi {
+        font-size: 0.85rem !important;
+    }
+    .gov-india {
+        font-size: 0.7rem;
+        letter-spacing: 0.5px;
+    }
+
+    /* Nav — full width items, larger touch targets */
+    .navbar-nav .nav-link {
+        padding: 0.85rem 1rem;
+        font-size: 0.95rem;
+    }
+    .dropdown-item {
+        padding: 0.6rem 1rem;
+    }
+
+    /* Hero — shorter on phone */
+    .carousel-placeholder {
+        height: 200px !important;
+    }
+    .carousel-placeholder h2 {
+        font-size: 1.2rem;
+    }
+    .carousel-placeholder .lead {
+        font-size: 0.8rem;
+    }
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    /* Announcement ticker */
+    .announcement-label {
+        font-size: 0.72rem;
+        padding: 3px 8px !important;
+    }
+    .ticker-content li {
+        font-size: 0.8rem;
+    }
+
+    /* Section titles */
+    .section-title {
+        font-size: 1.1rem;
+    }
+    .section-title span::after {
+        width: 35px;
+        height: 2px;
+    }
+
+    /* Leadership cards — single column */
+    .ministers-section .row > div {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .minister-img-placeholder {
+        width: 80px !important;
+        height: 80px !important;
+    }
+    .minister-img-placeholder i {
+        font-size: 1.5rem !important;
+    }
+
+    /* Initiative cards — single column */
+    .initiatives-section .col-lg-4,
+    .initiatives-section .col-sm-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .initiative-card .card-body {
+        padding: 1rem;
+    }
+    .icon-wrapper i {
+        font-size: 2rem !important;
+    }
+
+    /* Projects — single column */
+    .projects-section .col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    /* Quick access */
+    .services-section .btn {
+        padding: 0.75rem !important;
+        font-size: 0.85rem;
+    }
+    .services-section .btn i {
+        font-size: 1.5rem !important;
+    }
+
+    /* Stats — single column on very small */
+    .stats-section .col-md-3,
+    .stats-section .col-sm-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .stat-item {
+        padding: 10px 5px;
+    }
+    .stat-item i {
+        font-size: 1.5rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    .stat-number {
+        font-size: 1.2rem;
+    }
+    .stat-text {
+        font-size: 0.7rem;
+    }
+
+    /* Sidebar */
+    .sidebar .card-header h4 {
+        font-size: 0.85rem !important;
+    }
+    .sidebar .list-group-item {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.85rem;
+    }
+
+    /* Partner portals — wrap tighter */
+    .partner-portals .d-flex {
+        gap: 0.5rem !important;
+    }
+    .portal-logo {
+        padding: 4px !important;
+    }
+    .portal-logo span {
+        font-size: 0.7rem;
+        padding: 3px 6px !important;
+    }
+
+    /* Footer — single column */
+    .footer-top .col-lg-3,
+    .footer-top .col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .footer-title {
+        font-size: 1rem;
+    }
+    .footer-links a {
+        font-size: 0.85rem;
+    }
+    .footer-contact {
+        font-size: 0.85rem;
+    }
+
+    /* Footer bottom */
+    .footer-bottom {
+        font-size: 0.75rem;
+    }
+    .visitor-counter {
+        margin-top: 0.5rem;
+    }
+    .visitor-counter span {
+        font-size: 1rem !important;
+    }
+
+    /* Back to top button */
+    #btn-back-to-top {
+        width: 38px;
+        height: 38px;
+        bottom: 15px;
+        right: 15px;
+        font-size: 0.85rem;
+    }
+}
+
+/* --- Very Small Phones (≤360px) --- */
+@media (max-width: 360px) {
+    body {
+        font-size: 13px;
+    }
+    .emblem {
+        height: 38px !important;
+    }
+    .ministry-title h1 {
+        font-size: 0.75rem;
+    }
+    .ministry-name-hi {
+        font-size: 0.78rem !important;
+    }
+    .carousel-placeholder {
+        height: 170px !important;
+    }
+    .carousel-placeholder h2 {
+        font-size: 1rem;
+    }
+    .carousel-placeholder .lead {
+        font-size: 0.72rem;
+    }
+    .stats-section .col-sm-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .text-resize {
+        display: none !important;
+    }
+}
+
+/* =====================================================
+   TOUCH-FRIENDLY ENHANCEMENTS
+   ===================================================== */
+@media (hover: none) and (pointer: coarse) {
+    /* Larger tap targets for touch devices */
+    .navbar-nav .nav-link {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+    .dropdown-item {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+    .btn-sm {
+        min-height: 36px;
+        min-width: 36px;
+    }
+    .footer-links a {
+        display: inline-block;
+        padding: 4px 0;
+        min-height: 36px;
+        line-height: 28px;
+    }
+    .list-group-item a {
+        display: block;
+        padding: 4px 0;
+    }
+    /* Disable hover animations on touch */
+    .initiative-card:hover {
+        transform: none;
+    }
+}
+
+/* =====================================================
+   LANDSCAPE ORIENTATION (Mobile)
+   ===================================================== */
+@media (max-height: 500px) and (orientation: landscape) {
+    .carousel-placeholder {
+        height: 180px !important;
+    }
+    .carousel-placeholder h2 {
+        font-size: 1.2rem;
+    }
+    .carousel-placeholder .lead {
+        font-size: 0.8rem;
+    }
+    .stat-item {
+        padding: 8px;
+    }
+}
+
+/* =====================================================
+   PRINT STYLES
+   ===================================================== */
+@media print {
+    .top-bar, .navbar, .hero-section, .announcements, .partner-portals,
+    #btn-back-to-top, .sidebar, .footer-bottom, .ticker-controls,
+    .theme-toggle, .text-resize, .language-switch, .btn-search,
+    .social-links, .btn-social {
+        display: none !important;
+    }
+    body {
+        font-size: 12pt;
+        background: white;
+        color: black;
+    }
+    a {
+        text-decoration: underline;
+        color: black;
+    }
+    a[href]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: #666;
+    }
+    .main-header {
+        border-bottom: 2px solid #000;
+    }
+    .card {
+        border: 1px solid #ccc !important;
+        box-shadow: none !important;
+    }
+    .bg-primary-dark {
+        background-color: #fff !important;
+        color: #000 !important;
+    }
+    .footer-top {
+        background: #f5f5f5 !important;
+        color: #000 !important;
+    }
+    .footer-title {
+        color: #000 !important;
+    }
+    .footer-links a {
+        color: #333 !important;
+    }
+}

@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NICSI - National Informatics Centre Services Inc. | NIC Jammu, Government of Jammu & Kashmir</title>
+    <meta name="description" content="Official website of NICSI - National Informatics Centre Services Inc., NIC Jammu, Government of Jammu and Kashmir.">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="top-bar-left d-flex align-items-center gap-3">
+                <a href="https://www.india.gov.in/" target="_blank" rel="noopener noreferrer" title="Government of India, External Link that opens in a new window">
+                    <span>Government of India</span>
+                </a>
+                <span class="text-muted">|</span>
+                <a href="https://jk.gov.in/" target="_blank" rel="noopener noreferrer" title="Government of Jammu & Kashmir, External Link that opens in a new window">
+                    <span>Government of Jammu & Kashmir</span>
+                </a>
+            </div>
+            <div class="top-bar-right d-flex align-items-center">
+                <a href="#main-content" class="top-link d-none d-md-inline" title="Skip to Main Content">Skip to Main Content</a>
+                <a href="#" class="top-link d-none d-md-inline" title="Screen Reader Access">Screen Reader Access</a>
+                <div class="text-resize mx-2">
+                    <button type="button" class="btn btn-sm" id="btn-text-decrease" title="Decrease Text Size" aria-label="Decrease Text Size">A-</button>
+                    <button type="button" class="btn btn-sm" id="btn-text-normal" title="Normal Text Size" aria-label="Normal Text Size">A</button>
+                    <button type="button" class="btn btn-sm" id="btn-text-increase" title="Increase Text Size" aria-label="Increase Text Size">A+</button>
+                </div>
+                <div class="theme-toggle mx-2">
+                    <button type="button" class="btn btn-sm btn-dark" id="btn-high-contrast" title="High Contrast View" aria-label="High Contrast">
+                        <i class="fas fa-adjust"></i>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-light d-none" id="btn-normal-contrast" title="Normal View" aria-label="Normal Contrast">
+                        <i class="fas fa-sun"></i>
+                    </button>
+                </div>
+                <div class="language-switch ms-2">
+                    <select class="form-select form-select-sm" aria-label="Language Selection">
+                        <option value="en" selected>English</option>
+                        <option value="hi">हिन्दी</option>
+                        <option value="ur">اردو</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content d-flex justify-content-between align-items-center py-3">
+                <div class="logo-area d-flex align-items-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" alt="State Emblem of India" class="emblem" height="80">
+                    <div class="ministry-title ms-3">
+                        <h1 class="ministry-name-hi text-orange mb-0" style="font-size:1.1rem;">राष्ट्रीय सूचना विज्ञान केन्द्र सेवा निगम (एनआईसीएसआई)</h1>
+                        <h1 class="ministry-name-en text-primary-dark mb-0">National Informatics Centre Services Inc. (NICSI)</h1>
+                        <p class="gov-india text-muted mb-0">NIC Jammu &mdash; Government of Jammu & Kashmir</p>
+                    </div>
+                </div>
+                <div class="d-none d-lg-flex align-items-center gap-3">
+                    <div class="text-center" style="border: 1px solid #ccc; padding: 8px 15px; background:#f8f9fa; border-radius: 4px;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/NIC_logo.svg/120px-NIC_logo.svg.png" alt="NIC Logo" height="50" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="display:none; width:100px; height:50px; align-items:center; justify-content:center; font-weight:bold; color:#003366;">NIC</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary-dark">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 justify-content-between">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/"><i class="fas fa-home"></i> Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">About Us</a>
+                            <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                                <li><a class="dropdown-item" href="#">About NICSI</a></li>
+                                <li><a class="dropdown-item" href="#">About NIC Jammu</a></li>
+                                <li><a class="dropdown-item" href="#">Vision & Mission</a></li>
+                                <li><a class="dropdown-item" href="#">Organizational Structure</a></li>
+                                <li><a class="dropdown-item" href="#">Who's Who</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+                            <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                                <li><a class="dropdown-item" href="#">e-Governance Solutions</a></li>
+                                <li><a class="dropdown-item" href="#">Cloud Services (NIC Cloud)</a></li>
+                                <li><a class="dropdown-item" href="#">Network & Infrastructure</a></li>
+                                <li><a class="dropdown-item" href="#">Software Development</a></li>
+                                <li><a class="dropdown-item" href="#">Cybersecurity Services</a></li>
+                                <li><a class="dropdown-item" href="#">Video Conferencing (NIC VC)</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Projects</a>
+                            <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
+                                <li><a class="dropdown-item" href="#">J&K e-Services Portal</a></li>
+                                <li><a class="dropdown-item" href="#">JKGAD (General Administration)</a></li>
+                                <li><a class="dropdown-item" href="#">e-Office</a></li>
+                                <li><a class="dropdown-item" href="#">Revenue Court Management</a></li>
+                                <li><a class="dropdown-item" href="#">GIS Mapping & Land Records</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="docsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Documents</a>
+                            <ul class="dropdown-menu" aria-labelledby="docsDropdown">
+                                <li><a class="dropdown-item" href="#">Tenders & RFPs</a></li>
+                                <li><a class="dropdown-item" href="#">Circulars & Orders</a></li>
+                                <li><a class="dropdown-item" href="#">Annual Reports</a></li>
+                                <li><a class="dropdown-item" href="#">Policies & Guidelines</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#">Empanelment</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <div class="input-group">
+                            <input class="form-control form-control-sm" type="search" placeholder="Search..." aria-label="Search">
+                            <button class="btn btn-search btn-sm" type="submit"><i class="fas fa-search"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="carousel-placeholder bg-primary-dark text-white d-flex align-items-center justify-content-center" style="height: 400px;">
+                            <div class="text-center p-4">
+                                <h2 class="display-5 fw-bold">NICSI — Empowering Digital Governance</h2>
+                                <p class="lead">Delivering ICT solutions for the Government of Jammu & Kashmir through NIC.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel-placeholder bg-orange text-white d-flex align-items-center justify-content-center" style="height: 400px;">
+                            <div class="text-center p-4">
+                                <h2 class="display-5 fw-bold">Digital J&K</h2>
+                                <p class="lead">Transforming citizen services through e-Governance in Jammu & Kashmir.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel-placeholder bg-success text-white d-flex align-items-center justify-content-center" style="height: 400px;">
+                            <div class="text-center p-4">
+                                <h2 class="display-5 fw-bold">Secure Infrastructure</h2>
+                                <p class="lead">Building robust and secure government IT infrastructure across J&K.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Announcements Ticker -->
+        <section class="announcements bg-light py-2 border-bottom border-warning">
+            <div class="container d-flex align-items-center">
+                <div class="announcement-label bg-orange text-white px-3 py-1 fw-bold me-3 text-nowrap">What's New</div>
+                <div class="ticker-wrapper overflow-hidden flex-grow-1">
+                    <ul class="ticker-content d-flex list-unstyled m-0" id="announcement-ticker">
+                        <li class="me-5 text-nowrap"><span class="badge bg-danger me-2">New</span><a href="#">NICSI Empanelment of Cloud Service Providers — Apply Now</a> <small class="text-muted">(Oct 05, 2026)</small></li>
+                        <li class="me-5 text-nowrap"><a href="#">Tender for Supply of IT Equipment for NIC Jammu Division</a> <small class="text-muted">(Oct 01, 2026)</small></li>
+                        <li class="me-5 text-nowrap"><span class="badge bg-danger me-2">New</span><a href="#">J&K e-Office Training Programme for Government Employees — Registration Open</a> <small class="text-muted">(Sep 28, 2026)</small></li>
+                        <li class="me-5 text-nowrap"><a href="#">NIC Jammu launches new e-Services portal for District Administration</a> <small class="text-muted">(Sep 20, 2026)</small></li>
+                    </ul>
+                </div>
+                <div class="ticker-controls ms-2 d-flex">
+                    <button class="btn btn-sm btn-outline-secondary me-1" id="ticker-pause" title="Pause"><i class="fas fa-pause"></i></button>
+                    <button class="btn btn-sm btn-outline-secondary" id="ticker-play" title="Play"><i class="fas fa-play"></i></button>
+                    <a href="#" class="btn btn-sm btn-link text-decoration-none ms-2">View All</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="container my-5">
+            <div class="row">
+                <!-- Main Content -->
+                <div class="col-lg-9 col-md-8">
+
+                    <!-- Leadership -->
+                    <section class="ministers-section mb-5">
+                        <h2 class="section-title mb-4"><span>Leadership</span></h2>
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="card minister-card text-center h-100 shadow-sm border-0">
+                                    <div class="card-body">
+                                        <div class="minister-img-placeholder mx-auto mb-3" style="width:100px; height:100px; border-radius:50%; background:#e9ecef; border: 3px solid #003366; display:flex; align-items:center; justify-content:center;">
+                                            <i class="fas fa-user-tie fa-2x text-secondary"></i>
+                                        </div>
+                                        <h3 class="h6 card-title fw-bold text-primary-dark">Director General, NIC</h3>
+                                        <p class="card-text text-muted small mb-2">National Informatics Centre</p>
+                                        <a href="#" class="btn btn-sm btn-outline-primary">Profile</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card minister-card text-center h-100 shadow-sm border-0">
+                                    <div class="card-body">
+                                        <div class="minister-img-placeholder mx-auto mb-3" style="width:100px; height:100px; border-radius:50%; background:#e9ecef; border: 3px solid #003366; display:flex; align-items:center; justify-content:center;">
+                                            <i class="fas fa-user-tie fa-2x text-secondary"></i>
+                                        </div>
+                                        <h3 class="h6 card-title fw-bold text-primary-dark">MD, NICSI</h3>
+                                        <p class="card-text text-muted small mb-2">Managing Director, NICSI</p>
+                                        <a href="#" class="btn btn-sm btn-outline-primary">Profile</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card minister-card text-center h-100 shadow-sm border-0">
+                                    <div class="card-body">
+                                        <div class="minister-img-placeholder mx-auto mb-3" style="width:100px; height:100px; border-radius:50%; background:#e9ecef; border: 3px solid #003366; display:flex; align-items:center; justify-content:center;">
+                                            <i class="fas fa-user-tie fa-2x text-secondary"></i>
+                                        </div>
+                                        <h3 class="h6 card-title fw-bold text-primary-dark">SIO, NIC J&K</h3>
+                                        <p class="card-text text-muted small mb-2">State Informatics Officer, Jammu</p>
+                                        <a href="#" class="btn btn-sm btn-outline-primary">Profile</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Key Services -->
+                    <section class="initiatives-section mb-5">
+                        <h2 class="section-title mb-4"><span>Our Services</span></h2>
+                        <div class="row g-4">
+                            <div class="col-lg-4 col-sm-6">
+                                <div class="card initiative-card h-100 text-center shadow-sm">
+                                    <div class="card-body">
+                                        <div class="icon-wrapper mb-3 text-primary-dark"><i class="fas fa-cloud fa-3x"></i></div>
+                                        <h4 class="h6 fw-bold">NIC Cloud Services</h4>
+                                        <p class="small text-muted mb-0">Secure cloud infrastructure for government applications & data hosting.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-6">
+                                <div class="card initiative-card h-100 text-center shadow-sm">
+                                    <div class="card-body">
+                                        <div class="icon-wrapper mb-3 text-orange"><i class="fas fa-laptop-code fa-3x"></i></div>
+                                        <h4 class="h6 fw-bold">e-Governance Solutions</h4>
+                                        <p class="small text-muted mb-0">End-to-end IT solutions for digital governance in J&K.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-6">
+                                <div class="card initiative-card h-100 text-center shadow-sm">
+                                    <div class="card-body">
+                                        <div class="icon-wrapper mb-3 text-success"><i class="fas fa-network-wired fa-3x"></i></div>
+                                        <h4 class="h6 fw-bold">Network Infrastructure</h4>
+                                        <p class="small text-muted mb-0">NICNET, SWAN & broadband connectivity for government offices.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-6">
+                                <div class="card initiative-card h-100 text-center shadow-sm">
+                                    <div class="card-body">
+                                        <div class="icon-wrapper mb-3 text-info"><i class="fas fa-video fa-3x"></i></div>
+                                        <h4 class="h6 fw-bold">Video Conferencing</h4>
+                                        <p class="small text-muted mb-0">NIC VC services for secure government meetings & hearings.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-6">
+                                <div class="card initiative-card h-100 text-center shadow-sm">
+                                    <div class="card-body">
+                                        <div class="icon-wrapper mb-3 text-danger"><i class="fas fa-shield-alt fa-3x"></i></div>
+                                        <h4 class="h6 fw-bold">Cybersecurity</h4>
+                                        <p class="small text-muted mb-0">Security audits, vulnerability assessments & incident response.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-6">
+                                <div class="card initiative-card h-100 text-center shadow-sm">
+                                    <div class="card-body">
+                                        <div class="icon-wrapper mb-3 text-warning"><i class="fas fa-code fa-3x"></i></div>
+                                        <h4 class="h6 fw-bold">Software Development</h4>
+                                        <p class="small text-muted mb-0">Custom software solutions & web portals for J&K departments.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Key Projects in J&K -->
+                    <section class="projects-section mb-5">
+                        <h2 class="section-title mb-4"><span>Key Projects in J&K</span></h2>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="card shadow-sm border-start border-4 border-warning h-100">
+                                    <div class="card-body">
+                                        <h5 class="h6 fw-bold text-primary-dark"><i class="fas fa-file-signature me-2 text-orange"></i>e-Office</h5>
+                                        <p class="small text-muted mb-0">Paperless office solution deployed across J&K government departments for file management & workflow.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card shadow-sm border-start border-4 border-warning h-100">
+                                    <div class="card-body">
+                                        <h5 class="h6 fw-bold text-primary-dark"><i class="fas fa-map-marked-alt me-2 text-orange"></i>GIS & Land Records</h5>
+                                        <p class="small text-muted mb-0">Digital land records, GIS mapping & spatial data infrastructure for J&K revenue department.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card shadow-sm border-start border-4 border-warning h-100">
+                                    <div class="card-body">
+                                        <h5 class="h6 fw-bold text-primary-dark"><i class="fas fa-gavel me-2 text-orange"></i>Revenue Court Management</h5>
+                                        <p class="small text-muted mb-0">Digitizing revenue court proceedings and case management across Jammu & Kashmir.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card shadow-sm border-start border-4 border-warning h-100">
+                                    <div class="card-body">
+                                        <h5 class="h6 fw-bold text-primary-dark"><i class="fas fa-id-card me-2 text-orange"></i>J&K e-Services Portal</h5>
+                                        <p class="small text-muted mb-0">Single-window portal for citizen-centric government services & certificate issuance.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Quick Access / Services -->
+                    <section class="services-section mb-5">
+                        <h2 class="section-title mb-4"><span>Quick Access</span></h2>
+                        <div class="d-flex flex-wrap gap-3">
+                            <a href="#" class="btn btn-outline-secondary p-3 text-center flex-fill">
+                                <i class="fas fa-file-pdf d-block fa-2x mb-2 text-danger"></i>Tenders & RFPs
+                            </a>
+                            <a href="#" class="btn btn-outline-secondary p-3 text-center flex-fill">
+                                <i class="fas fa-users-cog d-block fa-2x mb-2 text-secondary"></i>Empanelment
+                            </a>
+                            <a href="#" class="btn btn-outline-secondary p-3 text-center flex-fill">
+                                <i class="fas fa-briefcase d-block fa-2x mb-2 text-primary"></i>Careers
+                            </a>
+                            <a href="#" class="btn btn-outline-secondary p-3 text-center flex-fill">
+                                <i class="fas fa-bullhorn d-block fa-2x mb-2 text-warning"></i>RTI
+                            </a>
+                            <a href="#" class="btn btn-outline-secondary p-3 text-center flex-fill">
+                                <i class="fas fa-headset d-block fa-2x mb-2 text-success"></i>IT Helpdesk
+                            </a>
+                        </div>
+                    </section>
+
+                </div>
+
+                <!-- Sidebar -->
+                <div class="col-lg-3 col-md-4">
+                    <aside class="sidebar">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-header widget-title text-white">
+                                <h4 class="mb-0 h6"><i class="fas fa-link me-2"></i>Quick Links</h4>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><a href="https://www.nicsi.com/" target="_blank">NICSI Official Website</a></li>
+                                <li class="list-group-item"><a href="https://www.nic.in/" target="_blank">NIC India</a></li>
+                                <li class="list-group-item"><a href="#">NIC J&K State Centre</a></li>
+                                <li class="list-group-item"><a href="#">GeM Portal</a></li>
+                                <li class="list-group-item"><a href="#">e-Procurement</a></li>
+                                <li class="list-group-item"><a href="#">Right to Information</a></li>
+                                <li class="list-group-item"><a href="#">Public Grievances</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- J&K District Offices -->
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-header widget-title text-white">
+                                <h4 class="mb-0 h6"><i class="fas fa-building me-2"></i>NIC District Centres</h4>
+                            </div>
+                            <ul class="list-group list-group-flush small">
+                                <li class="list-group-item"><a href="#">NIC Srinagar</a></li>
+                                <li class="list-group-item"><a href="#">NIC Jammu</a></li>
+                                <li class="list-group-item"><a href="#">NIC Udhampur</a></li>
+                                <li class="list-group-item"><a href="#">NIC Anantnag</a></li>
+                                <li class="list-group-item"><a href="#">NIC Baramulla</a></li>
+                                <li class="list-group-item"><a href="#" class="text-primary fw-bold">View All Districts →</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="card shadow-sm">
+                            <div class="card-header widget-title text-white">
+                                <h4 class="mb-0 h6"><i class="fas fa-share-alt me-2"></i>Connect With Us</h4>
+                            </div>
+                            <div class="card-body text-center">
+                                <a href="#" class="btn btn-social bg-primary text-white" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="btn btn-social bg-info text-white" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="btn btn-social bg-danger text-white" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                                <a href="#" class="btn btn-social bg-success text-white" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Counter -->
+        <section class="stats-section py-5 bg-primary-dark text-white">
+            <div class="container">
+                <div class="row text-center g-4">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="stat-item">
+                            <i class="fas fa-building fa-3x mb-3 text-orange"></i>
+                            <div class="stat-number display-6 fw-bold counter" data-target="20">0</div>
+                            <div class="stat-text">District NIC Centres in J&K</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="stat-item">
+                            <i class="fas fa-laptop fa-3x mb-3 text-orange"></i>
+                            <div class="stat-number display-6 fw-bold counter" data-target="350">0</div>
+                            <div class="stat-text">e-Governance Projects</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="stat-item">
+                            <i class="fas fa-server fa-3x mb-3 text-orange"></i>
+                            <div class="stat-number display-6 fw-bold counter" data-target="1200">0</div>
+                            <div class="stat-text">Government Offices Connected</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="stat-item">
+                            <i class="fas fa-users fa-3x mb-3 text-orange"></i>
+                            <div class="stat-number display-6 fw-bold counter" data-target="5000">0</div>
+                            <div class="stat-text">Empanelled IT Professionals</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- External Portals -->
+        <section class="partner-portals py-4 bg-light border-top">
+            <div class="container">
+                <h2 class="visually-hidden">Important Portals</h2>
+                <div class="d-flex justify-content-center flex-wrap gap-4 align-items-center">
+                    <a href="https://www.india.gov.in/" target="_blank" class="portal-logo p-2 bg-white border shadow-sm text-decoration-none"><span class="fw-bold px-3 py-2 d-block text-dark">india.gov.in</span></a>
+                    <a href="https://jk.gov.in/" target="_blank" class="portal-logo p-2 bg-white border shadow-sm text-decoration-none"><span class="fw-bold px-3 py-2 d-block text-dark">jk.gov.in</span></a>
+                    <a href="https://www.nic.in/" target="_blank" class="portal-logo p-2 bg-white border shadow-sm text-decoration-none"><span class="fw-bold px-3 py-2 d-block text-dark">nic.in</span></a>
+                    <a href="https://www.nicsi.com/" target="_blank" class="portal-logo p-2 bg-white border shadow-sm text-decoration-none"><span class="fw-bold px-3 py-2 d-block text-dark">nicsi.com</span></a>
+                    <a href="https://www.digitalindia.gov.in/" target="_blank" class="portal-logo p-2 bg-white border shadow-sm text-decoration-none"><span class="fw-bold px-3 py-2 d-block text-dark">digitalindia.gov.in</span></a>
+                    <a href="https://gem.gov.in/" target="_blank" class="portal-logo p-2 bg-white border shadow-sm text-decoration-none"><span class="fw-bold px-3 py-2 d-block text-dark">gem.gov.in</span></a>
+                </div>
+            </div>
+        </section>
+
+        <button type="button" class="btn btn-primary btn-floating" id="btn-back-to-top" title="Back to Top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer mt-5">
+        <div class="footer-top py-5 bg-primary-dark text-white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <h4 class="footer-title">Important Links</h4>
+                        <ul class="footer-links list-unstyled">
+                            <li><a href="#">NIC India</a></li>
+                            <li><a href="#">NICSI Official</a></li>
+                            <li><a href="#">MeitY</a></li>
+                            <li><a href="#">GeM Portal</a></li>
+                            <li><a href="#">J&K Government Portal</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <h4 class="footer-title">Quick Links</h4>
+                        <ul class="footer-links list-unstyled">
+                            <li><a href="#">Digital India</a></li>
+                            <li><a href="#">National Portal of India</a></li>
+                            <li><a href="#">MyGov</a></li>
+                            <li><a href="#">Data.gov.in</a></li>
+                            <li><a href="#">e-Procurement J&K</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <h4 class="footer-title">Website Policies</h4>
+                        <ul class="footer-links list-unstyled">
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Copyright Policy</a></li>
+                            <li><a href="#">Hyperlinking Policy</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Accessibility Statement</a></li>
+                            <li><a href="#">Feedback</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <h4 class="footer-title">Contact Us</h4>
+                        <address class="footer-contact text-light">
+                            <p><i class="fas fa-map-marker-alt me-2"></i>NIC Jammu,<br>
+                            Civil Secretariat,<br>
+                            Jammu - 180001,<br>
+                            Jammu & Kashmir</p>
+                            <p><i class="fas fa-phone me-2"></i>+91-191-2546994</p>
+                            <p><i class="fas fa-envelope me-2"></i>sio-jk@nic.in</p>
+                        </address>
+                        <div class="social-links mt-3">
+                            <a href="#" class="btn btn-social" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="btn btn-social" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="btn btn-social" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom py-3 bg-dark text-white-50">
+            <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start">
+                <div class="footer-credits mb-3 mb-md-0">
+                    <div class="d-flex align-items-center justify-content-center justify-content-md-start mb-2">
+                        <div style="background:#fff; color:#000; padding:2px 8px; font-weight:bold; font-size:12px; margin-right:10px; border-radius:2px;">NICSI</div>
+                        <span>Designed, Developed and Hosted by National Informatics Centre Services Inc. (NICSI)</span>
+                    </div>
+                    <p class="mb-0 small">NIC Jammu &mdash; Government of Jammu & Kashmir</p>
+                    <p class="mb-0 small">Last Updated: <strong>Oct 06, 2026</strong></p>
+                </div>
+                <div class="visitor-counter text-center p-2 border border-secondary rounded">
+                    <small class="d-block text-uppercase mb-1">Visitors</small>
+                    <span class="fs-5 fw-bold font-monospace text-white">00,123,456</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>
+
